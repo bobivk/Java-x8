@@ -13,6 +13,8 @@ public class TextFile extends File {
 	}
 
 	public void vim(Scanner in) {
+	    System.out.println(this.getName());
+	    System.out.println("type ':wq' to exit");
 		while(!in.nextLine().equals(":wq")) {
 			textContent.add(in.nextLine());
 		}

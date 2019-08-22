@@ -7,7 +7,7 @@ import java.util.Map;
 public class Directory extends File{
 
 	private int size = 0;
-	private HashMap<String, File> content = new HashMap<String, File>();
+	HashMap<String, File> content = new HashMap<String, File>();
 //	private Map<String, Directory> directoryContents = new HashMap<String, Directory>();
 	
 	public Directory(String name, String path) {
@@ -25,6 +25,8 @@ public class Directory extends File{
 	public void addFile(File file) {
 		this.content.put(file.getName(), file);
 		this.size++;
+		this.content.get(file.getName()).setPath(this.getPathToDirectory());
+		this.content.get(file.getName()).setParent(this);
 	}
 	public void removeFile(File file) {
 		this.content.remove(file.getName());
@@ -44,5 +46,10 @@ public class Directory extends File{
 
 	public int getSize() {
 		return size;
+	}
+
+	//get path of files in the directory
+	public String getPathToDirectory(){
+		return this.getPath() + "/" + this.getName();
 	}
 }
