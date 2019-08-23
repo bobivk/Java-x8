@@ -10,7 +10,7 @@ public abstract class File {
 	
 	public File(String name, String path) {
 		this.name = name;
-		this.setPath(path);
+		this.path = path;
 	}
 	public String getName() {
 		return name;

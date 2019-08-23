@@ -1,4 +1,4 @@
-package helloworld;
+package datastructuresandalgorithms;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,7 +7,6 @@ import java.util.Stack;
 
 import org.junit.Test;
 
-import helloworld.Brackets;
 
 public class BracketsTest {
 	Stack stack = new Stack<Character>();

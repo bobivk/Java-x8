@@ -1,4 +1,4 @@
-package helloworld;
+package datastructuresandalgorithms;
 
 import static org.junit.Assert.*;
 

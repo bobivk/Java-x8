@@ -6,31 +6,26 @@ import java.util.Map;
 
 public class Directory extends File{
 
-	private int size = 0;
+
 	HashMap<String, File> content = new HashMap<String, File>();
 //	private Map<String, Directory> directoryContents = new HashMap<String, Directory>();
-	
 	public Directory(String name, String path) {
 		super(name, path);
 	}
 
 	@Override
 	public ArrayList<String> getTextContent() {
-		System.out.println("tried to get text content of directory");
-		return null;
+		System.out.println("Tried to get text content of directory");
+		return new ArrayList<String>();
 	}
-
-
 
 	public void addFile(File file) {
 		this.content.put(file.getName(), file);
-		this.size++;
 		this.content.get(file.getName()).setPath(this.getPathToDirectory());
 		this.content.get(file.getName()).setParent(this);
 	}
 	public void removeFile(File file) {
 		this.content.remove(file.getName());
-		this.size--;
 	}
 
 // Getters and setters
@@ -41,15 +36,14 @@ public class Directory extends File{
 
 	public void setFileContent(HashMap<String, File> newContent){
 		this.content = newContent;
-		this.size = newContent.size();
 	}
 
 	public int getSize() {
-		return size;
+		return content.size();
 	}
 
 	//get path of files in the directory
 	public String getPathToDirectory(){
-		return this.getPath() + "/" + this.getName();
+		return this.getPath() + "/" + this.getName() + "/";
 	}
 }
