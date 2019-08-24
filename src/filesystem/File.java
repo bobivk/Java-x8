@@ -33,6 +33,5 @@ public abstract class File {
 	}
 	public abstract ArrayList<String> getTextContent();
 	public abstract HashMap<String, File> getFileContent();
-
     public abstract void addFile(File file);
 }

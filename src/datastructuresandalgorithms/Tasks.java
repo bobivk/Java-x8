@@ -1,4 +1,4 @@
-package helloworld;
+package datastructuresandalgorithms;
 import java.lang.Math;
 import java.util.ArrayList;
 public class Tasks {

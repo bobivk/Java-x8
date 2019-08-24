@@ -8,12 +8,10 @@ public class TextFile extends File {
 	private ArrayList<String> textContent;
 	public TextFile(String name, String path) {
 		super(name, path);
-		textContent = new ArrayList<String>();
-		this.setTextContent(textContent);
+		this.setTextContent(new ArrayList<>());
 	}
 
 	public void vim(Scanner in) {
-	    System.out.println(this.getName());
 	    System.out.println("type ':wq' to exit");
 		while(!in.nextLine().equals(":wq")) {
 			textContent.add(in.nextLine());

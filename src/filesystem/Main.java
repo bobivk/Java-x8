@@ -16,7 +16,7 @@ public class Main {
 
 
         while(true){
-            System.out.println(terminal.currentDirectory.getPathToDirectory());
+            System.out.println(terminal.getCurrentDirectory().getPathToDirectory());
             String nextln = scanner.nextLine();
             String[] inputarr = nextln.split(" ");
             ArrayList<String> inputs = new ArrayList<>(Arrays.asList(inputarr));
@@ -28,9 +28,9 @@ public class Main {
                 	case "help": System.out.println(help); break;
                     case "cd":
                         if (inputs.get(1).equals("..")) {
-                            terminal.cd(terminal.currentDirectory.getParent());
+                            terminal.cd(terminal.getCurrentDirectory().getParent());
                         } else {
-                            terminal.cd((Directory) terminal.currentDirectory.getFileContent().get(inputs.get(1)));
+                            terminal.cd((Directory) terminal.getCurrentDirectory().getFileContent().get(inputs.get(1)));
                         }
                     break;
                     case "touch":
@@ -38,38 +38,38 @@ public class Main {
                     case "mkdir":
                         terminal.mkdir(inputs.get(1));break;
                     case "mv":
-                        terminal.mv(terminal.currentDirectory.getFileContent().get(inputs.get(1)),
-                                (Directory) terminal.currentDirectory.getFileContent().get(inputs.get(2)));
+                        terminal.mv(terminal.getCurrentDirectory().getFileContent().get(inputs.get(1)),
+                                (Directory) terminal.getCurrentDirectory().getFileContent().get(inputs.get(2)));
                         break;
                     case "rm":
-                        terminal.rm(terminal.currentDirectory.getFileContent().get(inputs.get(1)));
+                        terminal.rm(terminal.getCurrentDirectory().getFileContent().get(inputs.get(1)));
                         break;
                     case "rename":
-                        terminal.rename(terminal.currentDirectory.getFileContent().get(inputs.get(1)), inputs.get(2));
+                        terminal.rename(terminal.getCurrentDirectory().getFileContent().get(inputs.get(1)), inputs.get(2));
                         break;
                     case "pwd":
                         terminal.pwd();
                         break;
                     case "cat":
-                        terminal.cat((TextFile) terminal.currentDirectory.getFileContent().get(inputs.get(1)));
+                        terminal.cat((TextFile) terminal.getCurrentDirectory().getFileContent().get(inputs.get(1)));
                         break;
                     case "vim":
-                        terminal.vim((TextFile) terminal.currentDirectory.getFileContent().get(inputs.get(1)));
+                        terminal.vim((TextFile) terminal.getCurrentDirectory().getFileContent().get(inputs.get(1)));
                         break;
                     case "cp": {
                         // check if both files exist
-                        if (terminal.currentDirectory.getFileContent().containsKey(inputs.get(1)) &&
-                                terminal.currentDirectory.getFileContent().containsKey(inputs.get(2))) {
-                            terminal.cp(terminal.currentDirectory.getFileContent().get(inputs.get(1)),
-                                    terminal.currentDirectory.getFileContent().get(inputs.get(2)));
+                        if (terminal.getCurrentDirectory().getFileContent().containsKey(inputs.get(1)) &&
+                                terminal.getCurrentDirectory().getFileContent().containsKey(inputs.get(2))) {
+                            terminal.cp(terminal.getCurrentDirectory().getFileContent().get(inputs.get(1)),
+                                    terminal.getCurrentDirectory().getFileContent().get(inputs.get(2)));
                         } else {
                             // create a new textfile and copy the text into it
-                            terminal.cp((TextFile) terminal.currentDirectory.getFileContent().get(inputs.get(1)), inputs.get(2));
+                            terminal.cp((TextFile) terminal.getCurrentDirectory().getFileContent().get(inputs.get(1)), inputs.get(2));
                         }
                         break;
                     }
                     case "locate":
-                        terminal.locate(inputs.get(1), terminal.currentDirectory);
+                        terminal.locate(inputs.get(1), terminal.getCurrentDirectory());
                         break;
                     case "quit":System.exit(0); break;
                     default:

@@ -1,4 +1,4 @@
-package helloworld;
+package datastructuresandalgorithms;
 import java.util.Stack;
 public class HanoiTower {
 	Stack<Integer> A = new Stack<Integer>();

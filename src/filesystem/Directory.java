@@ -7,7 +7,7 @@ import java.util.Map;
 public class Directory extends File{
 
 
-	HashMap<String, File> content = new HashMap<String, File>();
+	private HashMap<String, File> content = new HashMap<String, File>();
 //	private Map<String, Directory> directoryContents = new HashMap<String, Directory>();
 	public Directory(String name, String path) {
 		super(name, path);
@@ -44,6 +44,11 @@ public class Directory extends File{
 
 	//get path of files in the directory
 	public String getPathToDirectory(){
-		return this.getPath() + "/" + this.getName() + "/";
+		if(this.getPath().equals("")){
+			return this.getName() + "/";
+		}else{
+			return this.getParent().getPath() + "/" + this.getName();
+		}
 	}
+
 }

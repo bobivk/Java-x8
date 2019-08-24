@@ -1,4 +1,4 @@
-package helloworld;
+package datastructuresandalgorithms;
 import java.util.Scanner;
 import java.util.ArrayList;
 

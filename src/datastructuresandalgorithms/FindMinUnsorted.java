@@ -1,4 +1,4 @@
-package helloworld;
+package datastructuresandalgorithms;
 
 public class FindMinUnsorted {
 	int findMinUnsorted(int[] array, int max) {

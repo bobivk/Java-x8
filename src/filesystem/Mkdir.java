@@ -2,9 +2,9 @@ package filesystem;
 
 public class Mkdir implements Command {
 	public void execute(Terminal terminal, String... inputs) {
-		terminal.currentDirectory.addFile(
+		terminal.getCurrentDirectory().addFile(
 				new Directory(inputs[1],
-				terminal.currentDirectory.getPathToDirectory())
+				terminal.getCurrentDirectory().getPathToDirectory())
 		);
 	}
 }
